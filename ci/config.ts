@@ -1,6 +1,4 @@
-const DEPS: string[] = [
-  "react",
-];
+const DEPS: string[] = ["react"];
 
 const DEV_DEPS: string[] = [
   "@eslint/js",

@@ -23,9 +23,10 @@ export default [
   {
     plugins: { prettier: pluginPrettier },
     rules: {
-      "prettier/prettier": "error", // enforce Prettier formatting via ESLint
+      "prettier/prettier": ["error", { "semi": true }], // Enforce semicolons (Prettier)
       "no-unused-vars": "warn", // warn about unused variables
       "no-console": "off", // allow console logs
+      "semi": ["error", "always"], // Enforce semicolons at the end of statements
     },
   },
 ];

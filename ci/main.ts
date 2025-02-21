@@ -1,6 +1,7 @@
 import { execSync } from "child_process";
 
 import { Command } from "commander";
+import { sprintf } from "sprintf-js";
 
 import { DEPS, DEV_DEPS } from "./config";
 
@@ -43,6 +44,35 @@ env
     execSync("npm install", { stdio: "inherit" });
 
     console.log(color_text("\nCreation completed.", "green"));
+  });
+
+// linting, styling, and typing
+
+const style = cli
+  .command("style")
+  .description("Do linting, styling, and typing.");
+
+style
+  .command("check")
+  .option("--fix", "To fix fixable issues")
+  .action((options) => {
+    let template = "npx eslint %s";
+
+    if (options.fix) {
+      template += " --fix";
+    }
+
+    console.log(color_text("Checking the CI modules...", "yellow"));
+
+    // CI modules
+    execSync(sprintf(template, "ci"));
+
+    console.log(color_text("Checking the src modules...", "yellow"));
+
+    // src modules
+    execSync(sprintf(template, "src"));
+
+    console.log(color_text("Checks completed.", "green"));
   });
 
 cli.parse(process.argv);
