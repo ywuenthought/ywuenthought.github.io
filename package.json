@@ -16,6 +16,7 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.10",
+    "@types/sprintf-js": "^1.1.4",
     "commander": "^13.1.0",
     "eslint": "^9.20.1",
     "eslint-config-prettier": "^10.0.1",
@@ -30,6 +31,7 @@
     "typescript-eslint": "^8.24.1"
   },
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "^19.0.0",
+    "sprintf-js": "^1.1.3"
   }
 }
