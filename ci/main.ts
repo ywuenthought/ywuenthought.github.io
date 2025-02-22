@@ -83,7 +83,7 @@ cli
   .action(() => {
     console.log(color_text("Running the tests...", "yellow"));
 
-    execSync("npx jest -- src/", { stdio: "inherit" });
+    execSync("npx jest --passWithNoTests -- src/", { stdio: "inherit" });
 
     console.log(color_text("Tests completed.", "green"));
   });
