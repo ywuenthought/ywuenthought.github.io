@@ -65,14 +65,27 @@ style
     console.log(color_text("Checking the CI modules...", "yellow"));
 
     // CI modules
-    execSync(sprintf(template, "ci"));
+    execSync(sprintf(template, "ci"), { stdio: "inherit" });
 
     console.log(color_text("Checking the src modules...", "yellow"));
 
     // src modules
-    execSync(sprintf(template, "src"));
+    execSync(sprintf(template, "src"), { stdio: "inherit" });
 
     console.log(color_text("Checks completed.", "green"));
+  });
+
+// testing
+
+cli
+  .command("test")
+  .description("Run unit tests.")
+  .action(() => {
+    console.log(color_text("Running the tests...", "yellow"));
+
+    execSync("npx jest -- src/", { stdio: "inherit" });
+
+    console.log(color_text("Tests completed.", "green"));
   });
 
 cli.parse(process.argv);
