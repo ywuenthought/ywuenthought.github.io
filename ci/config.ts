@@ -10,6 +10,7 @@ const DEV_DEPS: string[] = [
   "eslint-plugin-react",
   "globals",
   "jest",
+  "jest-environment-jsdom",
   "nodemon",
   "prettier",
   "ts-jest",
