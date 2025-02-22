@@ -12,6 +12,7 @@ const DEV_DEPS: string[] = [
   "jest",
   "nodemon",
   "prettier",
+  "ts-jest",
   "typescript-eslint",
 ];
 
