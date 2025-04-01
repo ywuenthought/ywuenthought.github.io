@@ -7,7 +7,10 @@
     "skipLibCheck": true,
     "outDir": "dist",
     "rootDir": "src",
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["./node_modules/@types"],
+    "moduleResolution": "Node",
+    "lib": ["DOM", "ES6"],
+    "jsx": "react-jsx",
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
