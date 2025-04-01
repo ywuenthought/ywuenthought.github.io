@@ -1,4 +1,4 @@
-const DEPS: string[] = ["react"];
+const DEPS: string[] = ["react", "react-dom", "react-router-dom"];
 
 const DEV_DEPS: string[] = [
   "@eslint/js",
