@@ -18,6 +18,9 @@ export default [
         version: "detect",
       },
     },
+    rules: {
+      "react/react-in-jsx-scope": "off", // Turn off the need of "import React" in JSX
+    },
   },
   prettier, // disable conflicting ESLint rules
   {
