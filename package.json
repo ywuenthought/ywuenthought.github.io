@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "ci": "tsx ci/main.ts",
     "test": "jest"
   },
   "keywords": [],
