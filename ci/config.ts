@@ -4,6 +4,7 @@ const DEV_DEPS: string[] = [
   "@eslint/js",
   "@types/jest",
   "@types/react",
+  "@types/react-dom",
   "eslint",
   "eslint-config-prettier",
   "eslint-plugin-prettier",
