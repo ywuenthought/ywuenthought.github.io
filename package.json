@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "ci": "tsx ci/main.ts"
+    "ci": "tsx ci/main.ts",
+    "build": "esbuild src/index.tsx --bundle --outfile=dist/bundle.js --loader:.tsx=tsx --format=esm --target=es6",
+    "serve": "cp dist/bundle.js public/bundle.js && serve public"
   },
   "keywords": [],
   "author": "",
