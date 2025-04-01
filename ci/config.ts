@@ -18,4 +18,6 @@ const DEV_DEPS: string[] = [
   "typescript-eslint",
 ];
 
-export { DEPS, DEV_DEPS };
+const BUILD_DEPS: string[] = ["esbuild", "serve"];
+
+export { DEPS, DEV_DEPS, BUILD_DEPS };

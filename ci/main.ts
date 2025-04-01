@@ -3,7 +3,7 @@ import { execSync } from "child_process";
 import { Command } from "commander";
 import { sprintf } from "sprintf-js";
 
-import { DEPS, DEV_DEPS } from "./config";
+import { BUILD_DEPS, DEPS, DEV_DEPS } from "./config";
 
 const cli = new Command();
 
@@ -21,9 +21,11 @@ cli
       });
     }
 
-    if (DEV_DEPS.length > 0) {
+    const other_deps = DEV_DEPS.concat(BUILD_DEPS);
+
+    if (other_deps.length > 0) {
       execSync(
-        `npm install --package-lock-only --save-dev ${DEV_DEPS.join(" ")}`,
+        `npm install --package-lock-only --save-dev ${other_deps.join(" ")}`,
         { stdio: "inherit" },
       );
     }
