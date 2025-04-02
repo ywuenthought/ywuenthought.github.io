@@ -13,6 +13,7 @@ const DEV_DEPS: string[] = [
   "@types/react-dom",
   "eslint",
   "eslint-config-prettier",
+  "eslint-plugin-import",
   "eslint-plugin-prettier",
   "eslint-plugin-react",
   "globals",
