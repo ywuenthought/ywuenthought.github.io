@@ -1,7 +1,17 @@
-export default function App() {
+import Body from "./components/Body";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import NavBar from "./components/NavBar";
+
+const App = () => {
   return (
     <>
-      <h1>Incredible Me</h1>
+      <Header />
+      <NavBar />
+      <Footer />
+      <Body />
     </>
   );
-}
+};
+
+export default App;
