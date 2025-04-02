@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import prettier from "eslint-config-prettier";
 import pluginPrettier from "eslint-plugin-prettier";
+import pluginImport from "eslint-plugin-import";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -19,17 +20,35 @@ export default [
       },
     },
     rules: {
-      "react/react-in-jsx-scope": "off", // Turn off the need of "import React" in JSX
+      "react/react-in-jsx-scope": "off", // Turn off the need of "import React" in JSX.
     },
   },
   prettier, // disable conflicting ESLint rules
   {
-    plugins: { prettier: pluginPrettier },
+    plugins: { prettier: pluginPrettier, import: pluginImport },
     rules: {
-      "prettier/prettier": ["error", { "semi": true }], // Enforce semicolons (Prettier)
-      "no-unused-vars": "warn", // warn about unused variables
-      "no-console": "off", // allow console logs
-      "semi": ["error", "always"], // Enforce semicolons at the end of statements
+      "prettier/prettier": ["error", { "semi": true }], // Enforce semicolons.
+      "no-unused-vars": "warn", // Warn about unused variables.
+      "no-console": "off", // Allow console logs.
+      "semi": ["error", "always"], // Enforce semicolons at the end of statements.
+
+      // Apply import sorting rules here.
+      "import/order": [
+        "warn",
+        {
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true,
+          },
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            ["parent", "sibling", "index"],
+          ],
+          "newlines-between": "always",
+        },
+      ],
     },
   },
 ];
