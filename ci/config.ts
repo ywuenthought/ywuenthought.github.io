@@ -1,4 +1,10 @@
-const DEPS: string[] = ["react", "react-dom", "react-router-dom"];
+const DEPS: string[] = [
+  "react",
+  "react-dom",
+  "react-redux",
+  "react-router-dom",
+  "@reduxjs/toolkit",
+];
 
 const DEV_DEPS: string[] = [
   "@eslint/js",
