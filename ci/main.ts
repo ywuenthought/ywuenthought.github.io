@@ -10,10 +10,10 @@ const cli = new Command();
 // bundle management
 
 cli
-  .command("update-deps")
-  .description("Update the dependencies.")
+  .command("regenerate-bundle")
+  .description("Regenerate the dependency bundle.")
   .action(() => {
-    console.log(color_text("Updating the dependencies...", "yellow"));
+    console.log(color_text("Regenerating the dependency bundle...", "yellow"));
 
     if (DEPS.length > 0) {
       execSync(`npm install --package-lock-only --save ${DEPS.join(" ")}`, {
@@ -30,7 +30,7 @@ cli
       );
     }
 
-    console.log(color_text("\nUpdate completed.", "green"));
+    console.log(color_text("\nRegeneration completed.", "green"));
   });
 
 // environment management
