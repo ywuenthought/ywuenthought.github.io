@@ -1,54 +1,28 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import prettier from "eslint-config-prettier";
-import pluginPrettier from "eslint-plugin-prettier";
-import pluginImport from "eslint-plugin-import";
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended, // standard JS rules
-  ...tseslint.configs.recommended, // TS rules
+export default tseslint.config(
+  { ignores: ['dist'] },
   {
-    ...pluginReact.configs.flat.recommended, // React rules
-    settings: {
-      react: {
-        version: "detect",
-      },
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+    },
+    plugins: {
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
     },
     rules: {
-      "react/react-in-jsx-scope": "off", // Turn off the need of "import React" in JSX.
-    },
-  },
-  prettier, // disable conflicting ESLint rules
-  {
-    plugins: { prettier: pluginPrettier, import: pluginImport },
-    rules: {
-      "prettier/prettier": ["error", { "semi": true }], // Enforce semicolons.
-      "no-unused-vars": "warn", // Warn about unused variables.
-      "no-console": "off", // Allow console logs.
-      "semi": ["error", "always"], // Enforce semicolons at the end of statements.
-
-      // Apply import sorting rules here.
-      "import/order": [
-        "warn",
-        {
-          alphabetize: {
-            order: "asc",
-            caseInsensitive: true,
-          },
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            ["parent", "sibling", "index"],
-          ],
-          "newlines-between": "always",
-        },
+      ...reactHooks.configs.recommended.rules,
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
       ],
     },
   },
-];
+)

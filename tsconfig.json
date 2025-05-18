@@ -1,17 +1,7 @@
 {
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "ES6",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "outDir": "dist",
-    "rootDir": "src",
-    "typeRoots": ["./node_modules/@types"],
-    "moduleResolution": "Node",
-    "lib": ["DOM", "ES6"],
-    "jsx": "react-jsx",
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
