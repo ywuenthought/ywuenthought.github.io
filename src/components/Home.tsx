@@ -4,23 +4,36 @@
 
 import { Box, Toolbar, Typography } from '@mui/material';
 
+import hero from '../assets/hero.png';
+
 export default function Home() {
   return (
     <Box
       sx={{
+        alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',
+        height: '100vh',
+        overflow: 'hidden',
       }}
     >
       <Toolbar />
       <Box
+        component="img"
+        src={hero}
         sx={{
-          alignItems: 'center',
+          borderRadius: '50%',
+          height: '30%',
+          mb: 4,
+          objectFit: 'contain',
+        }}
+      />
+      <Box
+        sx={{
           display: 'flex',
           flex: 1,
           flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
           textAlign: 'center',
         }}
       >
