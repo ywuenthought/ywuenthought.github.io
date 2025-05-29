@@ -3,6 +3,7 @@ import './App.css';
 import { Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
+import Experience from './components/Experience';
 import Header from './components/Header';
 import Home from './components/Home';
 import { ROUTES } from './const';
@@ -14,6 +15,7 @@ function App() {
       <Box component="main">
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.EXPERIENCE} element={<Experience />} />
         </Routes>
       </Box>
     </>
