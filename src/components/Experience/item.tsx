@@ -4,7 +4,7 @@
 
 import { Box, Typography } from '@mui/material';
 
-import { formatDate } from './util';
+import { formatDate } from '../../util';
 
 export type ItemProps = {
   endDate?: Date;
