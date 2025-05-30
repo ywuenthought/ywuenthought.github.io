@@ -7,7 +7,7 @@ import { Box, Typography } from '@mui/material';
 import { formatDate } from './util';
 
 export type ItemProps = {
-  endData?: Date;
+  endDate?: Date;
   field?: string;
   organization: string;
   startDate: Date;
@@ -16,7 +16,7 @@ export type ItemProps = {
 };
 
 export default function Item(props: ItemProps) {
-  const { endData, field, organization, startDate, title, width } = props;
+  const { endDate, field, organization, startDate, title, width } = props;
 
   return (
     <Box sx={{ textAlign: 'left', width: width }}>
@@ -28,7 +28,7 @@ export default function Item(props: ItemProps) {
       </Typography>
       <Typography color="textPrimary" variant="body1">
         Duration: {formatDate(startDate)} -{' '}
-        {endData ? formatDate(endData) : 'Now'}
+        {endDate ? formatDate(endDate) : 'Now'}
       </Typography>
       {field && (
         <Typography color="textSecondary" variant="body2">
