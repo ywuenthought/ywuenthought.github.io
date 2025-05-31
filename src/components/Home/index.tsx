@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 
 import hero from '@/assets/hero.png';
 
-import { DESCRIPTION, GREETING, TITLE } from './const';
+import { DESCRIPTIONS, GREETING, TITLE } from './const';
 import Desc from './desc';
 import Hero from './hero';
 
@@ -29,9 +29,9 @@ export default function Home() {
           height: 500,
         }}
       >
-        <Hero src={hero} sx={{ height: '100%', width: '30%' }} />
+        <Hero src={hero} sx={{ height: '100%', width: '40%' }} />
         <Desc
-          description={DESCRIPTION}
+          descriptions={DESCRIPTIONS}
           greeting={GREETING}
           title={TITLE}
           sx={{ height: '100%' }}

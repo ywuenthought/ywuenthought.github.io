@@ -6,14 +6,14 @@ import type { SxProps, Theme } from '@mui/material';
 import { Box, Typography } from '@mui/material';
 
 type DescProps = {
-  description: string;
+  descriptions: string[];
   greeting: string;
   title: string;
   sx?: SxProps<Theme>;
 };
 
 export default function Desc(props: DescProps) {
-  const { description, greeting, title, sx = {} } = props;
+  const { descriptions, greeting, title, sx = {} } = props;
 
   return (
     <Box
@@ -31,7 +31,15 @@ export default function Desc(props: DescProps) {
       <Typography gutterBottom variant="h5">
         {title}
       </Typography>
-      <Typography variant="body1">{description}</Typography>
+      {descriptions.map((desc, index) => (
+        <Typography
+          gutterBottom={index !== descriptions.length - 1}
+          key={`home:descs:${index}`}
+          variant="body1"
+        >
+          {desc}
+        </Typography>
+      ))}
     </Box>
   );
 }
