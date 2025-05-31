@@ -1,0 +1,18 @@
+// Copyright (c) 2025 Yifeng Wu
+// This file is part of incredible-me and is licensed under the MIT License.
+// See the LICENSE file for more details.
+
+import { Stack } from '@mui/material';
+
+import { ITEMS } from './const';
+import Item from './item';
+
+export default function Publications() {
+  return (
+    <Stack spacing={2}>
+      {ITEMS.map((item, index) => (
+        <Item key={`publications:items:${index}`} {...item} />
+      ))}
+    </Stack>
+  );
+}
