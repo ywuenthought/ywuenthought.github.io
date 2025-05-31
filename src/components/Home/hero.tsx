@@ -16,10 +16,10 @@ export default function Hero(props: HeroProps) {
   return (
     <Box
       sx={{
-        alignItems: 'flex-start',
         aspectRatio: '1 / 1',
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center',
         ...sx,
       }}
     >

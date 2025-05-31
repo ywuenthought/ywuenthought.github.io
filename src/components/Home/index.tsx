@@ -22,11 +22,13 @@ export default function Home() {
       }}
     >
       <Box
+        gap={2}
+        padding={4}
         sx={{
-          alignItems: 'flex-start',
+          border: 1,
           display: 'flex',
           flexDirection: 'row',
-          height: 500,
+          height: 400,
         }}
       >
         <Hero src={hero} sx={{ height: '100%', width: '40%' }} />

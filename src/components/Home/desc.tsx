@@ -18,9 +18,9 @@ export default function Desc(props: DescProps) {
   return (
     <Box
       sx={{
-        alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center',
         textAlign: 'left',
         ...sx,
       }}
@@ -33,6 +33,7 @@ export default function Desc(props: DescProps) {
       </Typography>
       {descriptions.map((desc, index) => (
         <Typography
+          fontSize="small"
           gutterBottom={index !== descriptions.length - 1}
           key={`home:descs:${index}`}
           variant="body1"
