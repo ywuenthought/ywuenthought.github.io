@@ -3,7 +3,7 @@
 // See the LICENSE file for more details.
 
 import type { SxProps, Theme } from '@mui/material';
-import { Box, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 
 type DescProps = {
   descriptions: string[];
@@ -25,22 +25,23 @@ export default function Desc(props: DescProps) {
         ...sx,
       }}
     >
-      <Typography gutterBottom variant="h3">
-        {greeting}
-      </Typography>
-      <Typography gutterBottom variant="h5">
-        {title}
-      </Typography>
-      {descriptions.map((desc, index) => (
-        <Typography
-          fontSize="small"
-          gutterBottom={index !== descriptions.length - 1}
-          key={`home:descs:${index}`}
-          variant="body1"
-        >
-          {desc}
+      <Stack direction="column" spacing={2}>
+        <Typography gutterBottom variant="h3">
+          {greeting}
         </Typography>
-      ))}
+        <Typography gutterBottom variant="h5">
+          {title}
+        </Typography>
+        {descriptions.map((desc, index) => (
+          <Typography
+            fontSize="small"
+            key={`home:descs:${index}`}
+            variant="body1"
+          >
+            {desc}
+          </Typography>
+        ))}
+      </Stack>
     </Box>
   );
 }
