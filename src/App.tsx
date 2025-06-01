@@ -4,6 +4,7 @@ import { Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
 import Experience from './components/Experience';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
 import Projects from './components/Projects';
@@ -22,6 +23,7 @@ function App() {
           <Route path={ROUTES.PUBLICATIONS} element={<Publications />} />
         </Routes>
       </Box>
+      <Footer />
     </>
   );
 }
