@@ -4,23 +4,41 @@
 
 import { Box } from '@mui/material';
 
-import { ITEMS, LOGOS } from './const';
+import { itemLists, scenes } from './const';
 import Item from './item';
-import Logo from './logo';
+import Scene from './scene';
 
 export default function Experience() {
   return (
-    <Box>
-      {ITEMS.map((item, index) => (
+    <Box
+      sx={{
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}
+    >
+      {itemLists.map((items, index) => (
         <Box
-          display="flex"
-          flexDirection="row"
-          gap={2}
           key={`experience:items:${index}`}
-          sx={{ py: 2 }}
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: 8,
+            height: 400,
+            pb: index !== itemLists.length - 1 ? 4 : 0,
+          }}
         >
-          <Logo {...LOGOS[index]} />
-          <Item {...item} />
+          <Scene {...scenes[index]} sx={{ height: '100%' }} />
+          <Box sx={{ height: '100%', textAlign: 'left' }}>
+            {items.map((item, innerIndex) => (
+              <Item
+                {...item}
+                key={`experience:items:${index}:${innerIndex}`}
+                sx={{ pb: innerIndex !== items.length - 1 ? 2 : 0 }}
+              />
+            ))}
+          </Box>
         </Box>
       ))}
     </Box>

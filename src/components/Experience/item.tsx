@@ -2,7 +2,7 @@
 // This file is part of incredible-me and is licensed under the MIT License.
 // See the LICENSE file for more details.
 
-import { Box, Typography } from '@mui/material';
+import { Box, type SxProps, type Theme, Typography } from '@mui/material';
 
 import { formatDate } from '../../util';
 
@@ -12,29 +12,22 @@ export type ItemProps = {
   organization: string;
   startDate: Date;
   title: string;
-  width: number;
+  sx?: SxProps<Theme>;
 };
 
 export default function Item(props: ItemProps) {
-  const { endDate, field, organization, startDate, title, width } = props;
+  const { endDate, field, organization, startDate, title, sx = {} } = props;
 
   return (
-    <Box sx={{ textAlign: 'left', width: width }}>
+    <Box sx={{ ...sx }}>
       <Typography fontWeight="bold" variant="subtitle1">
-        Title: {title}
+        {title}
       </Typography>
-      <Typography color="textPrimary" variant="body1">
-        Organization: {organization}
+      <Typography variant="body1">{organization}</Typography>
+      <Typography variant="body1">
+        {formatDate(startDate)} - {endDate ? formatDate(endDate) : 'Now'}
       </Typography>
-      <Typography color="textPrimary" variant="body1">
-        Duration: {formatDate(startDate)} -{' '}
-        {endDate ? formatDate(endDate) : 'Now'}
-      </Typography>
-      {field && (
-        <Typography color="textSecondary" variant="body2">
-          Field: {field}
-        </Typography>
-      )}
+      {field && <Typography variant="body2">{field}</Typography>}
     </Box>
   );
 }

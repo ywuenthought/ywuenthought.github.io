@@ -18,7 +18,7 @@ export default function Home() {
         display: 'flex',
         flexDirection: 'column',
         height: '100vh',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
       }}
     >
       <Box
