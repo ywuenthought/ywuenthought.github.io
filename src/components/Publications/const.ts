@@ -6,6 +6,16 @@ import type { ItemProps } from './item';
 
 export const ITEMS: ItemProps[] = [
   {
+    doi: '10.1063/5.0265591',
+    issue: 20,
+    journal: 'Applied Physics Letters',
+    page: 202102,
+    publisher: 'AIP Publishing',
+    volume: 126,
+    title: 'Qubit properties of antisite defects in ZnSe',
+    year: 2025,
+  },
+  {
     doi: '10.1021/acs.jpclett.2c01976',
     issue: 35,
     journal: 'The Journal of Physical Chemistry Letters',

@@ -36,7 +36,15 @@ function App() {
             }
           />
           <Route path={ROUTES.PROJECTS} element={<Projects />} />
-          <Route path={ROUTES.PUBLICATIONS} element={<Publications />} />
+          <Route
+            path={ROUTES.PUBLICATIONS}
+            element={
+              <Box>
+                <Toolbar />
+                <Publications />
+              </Box>
+            }
+          />
         </Routes>
       </Box>
       <Footer />
