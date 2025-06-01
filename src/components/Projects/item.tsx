@@ -3,12 +3,13 @@
 // See the LICENSE file for more details.
 
 import { GitHub, Language } from '@mui/icons-material';
-import { Box, Chip, IconButton, Stack, Typography } from '@mui/material';
+import type { SxProps, Theme } from '@mui/material';
+import { Chip, IconButton, Stack, Typography } from '@mui/material';
 
 import { formatDate } from '@/util';
 
 export type ItemProps = {
-  description: string;
+  descriptions: string[];
   endDate?: Date;
   github?: string;
   media?: string;
@@ -16,12 +17,12 @@ export type ItemProps = {
   startDate: Date;
   techStack?: string[];
   title: string;
-  width: number;
+  sx?: SxProps<Theme>;
 };
 
 export default function Item(props: ItemProps) {
   const {
-    description,
+    descriptions,
     endDate,
     github,
     media,
@@ -29,20 +30,17 @@ export default function Item(props: ItemProps) {
     startDate,
     techStack,
     title,
-    width,
+    sx = {},
   } = props;
 
   return (
-    <Box sx={{ textAlign: 'left', width: width }}>
+    <Stack spacing={2} sx={{ ...sx }}>
       <Typography fontWeight="bold" variant="h6">
-        Title: {title}
+        {title}
       </Typography>
-      <Typography color="textPrimary" variant="body2">
-        Organization: {organization}
-      </Typography>
-      <Typography color="textPrimary" variant="body2">
-        Duration: {formatDate(startDate)} -{' '}
-        {endDate ? formatDate(endDate) : 'Now'}
+      <Typography variant="body2">{organization}</Typography>
+      <Typography variant="body2">
+        {formatDate(startDate)} - {endDate ? formatDate(endDate) : 'Now'}
       </Typography>
       {techStack && (
         <Stack direction="row" spacing={1}>
@@ -51,11 +49,13 @@ export default function Item(props: ItemProps) {
           ))}
         </Stack>
       )}
-      <Typography color="textSecondary" variant="body2">
-        {description}
-      </Typography>
+      {descriptions.map((desc, index) => (
+        <Typography key={`projects:${title}:descs:${index}`} variant="body2">
+          {desc}
+        </Typography>
+      ))}
       {(github || media) && (
-        <Stack>
+        <Stack direction="row" spacing={2}>
           {github && (
             <IconButton
               href={github}
@@ -78,6 +78,6 @@ export default function Item(props: ItemProps) {
           )}
         </Stack>
       )}
-    </Box>
+    </Stack>
   );
 }

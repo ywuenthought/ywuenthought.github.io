@@ -35,7 +35,15 @@ function App() {
               </Box>
             }
           />
-          <Route path={ROUTES.PROJECTS} element={<Projects />} />
+          <Route
+            path={ROUTES.PROJECTS}
+            element={
+              <Box>
+                <Toolbar />
+                <Projects />
+              </Box>
+            }
+          />
           <Route
             path={ROUTES.PUBLICATIONS}
             element={
