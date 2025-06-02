@@ -4,7 +4,7 @@
 
 import { GitHub, Language } from '@mui/icons-material';
 import type { SxProps, Theme } from '@mui/material';
-import { Chip, IconButton, Stack, Typography } from '@mui/material';
+import { Box, Chip, IconButton, Stack, Typography } from '@mui/material';
 
 import { formatDate } from '@/util';
 
@@ -43,11 +43,17 @@ export default function Item(props: ItemProps) {
         {formatDate(startDate)} - {endDate ? formatDate(endDate) : 'Now'}
       </Typography>
       {techStack && (
-        <Stack direction="row" spacing={1}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 1,
+          }}
+        >
           {techStack.map((tech) => (
             <Chip key={`${title}:techs:${tech}`} label={tech} size="small" />
           ))}
-        </Stack>
+        </Box>
       )}
       {descriptions.map((desc, index) => (
         <Typography key={`projects:${title}:descs:${index}`} variant="body2">
