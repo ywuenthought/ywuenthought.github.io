@@ -67,6 +67,7 @@ export const ITEMS: ItemProps[] = [
       'GitHub Actions',
       'Gunicorn',
       'Kubernetes',
+      'Matplotlib',
       'Python',
       'Terraform',
       'XGBoost',
@@ -106,17 +107,63 @@ export const ITEMS: ItemProps[] = [
     title: 'Scalable Bioinformatics Pipelines',
   },
   {
-    descriptions: [''],
+    descriptions: [
+      'I studied qubit potential of point defects in Zinc Selenide (ZnSe) ' +
+        'from density functional theory (DFT) calculations, analyzing their ' +
+        'electronic structure, charge states, and formation energetics under ' +
+        'varying conditions. To support large-scale, reproducible analysis, ' +
+        'I built a CLI tool backed by a structured MySQL database to manage ' +
+        'and query thermodynamic data.',
+      'This framework enables automated defect screening and thermodynamic ' +
+        'modeling, laying the foundation for identifying qubit candidates in ' +
+        'wide-bandgap semiconductors. It integrates seamlessly into quantum ' +
+        'materials workflows, supporting exploratory and targeted studies.',
+    ],
     endDate: new Date(2022, 11),
     organization: 'NCSU',
     startDate: new Date(2021, 8),
-    title: 'Point Defects in Zinc Selenide',
+    techStack: [
+      'Bash',
+      'HPC',
+      'Matplotlib',
+      'MySQL',
+      'Numpy',
+      'Python',
+      'VASP',
+      'VESTA',
+    ],
+    title: 'Qubit Properties of Point Defects in Zinc Selenide',
   },
   {
-    descriptions: [''],
+    descriptions: [
+      'I developed atomic-level models of point defects in polycrystalline ' +
+        'Strontium Titanate (SrTiO₃) to study their influence on material ' +
+        'properties across grain boundaries. Building on defect energetics ' +
+        'from DFT calculations, I constructed a multiphysics computational ' +
+        'model that simulates the behavior of space charge regions formed at ' +
+        "grain boundaries - a critical feature that affects the material's " +
+        'electrical and ionic transport properties.',
+      'This model integrates defect chemistry, electrostatics, and transport ' +
+        'phenomena, enabling predictions of macroscopic electrical behavior ' +
+        'from microscopic defect distributions. The framework adds insights ' +
+        'into how polycrystalline structure and interfacial effects govern ' +
+        'bulk performance in real-world SrTiO₃ applications e.g. capacitors, ' +
+        'fuel cells, and resistive switching devices.',
+    ],
     endDate: new Date(2021, 7),
     organization: 'NCSU',
     startDate: new Date(2017, 5),
-    title: 'Point Defects in Strontium Titanate',
+    techStack: [
+      'Bash',
+      'FEniCS',
+      'HPC',
+      'Matplotlib',
+      'MySQL',
+      'Numpy',
+      'Python',
+      'VASP',
+      'VESTA',
+    ],
+    title: 'Space Charge in Polycrystalline Strontium Titanate',
   },
 ];
