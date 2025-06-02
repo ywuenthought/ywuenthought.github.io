@@ -7,5 +7,5 @@ export const ROUTES = {
   EXPERIENCE: '/experience',
   PROJECTS: '/projects',
   PUBLICATIONS: '/publications',
-  CONTACT: '/contact',
+  TRAVELS: '/travels',
 };

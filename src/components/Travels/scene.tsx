@@ -17,9 +17,7 @@ export default function Scene(props: SceneProps) {
     <Box
       sx={{
         alignItems: 'center',
-        aspectRatio: '3 / 2',
         display: 'flex',
-        flexShrink: 0,
         justifyContent: 'center',
         ...sx,
       }}
@@ -30,10 +28,7 @@ export default function Scene(props: SceneProps) {
           loading="lazy"
           src={src}
           sx={{
-            borderBottomLeftRadius: 100,
-            borderTopLeftRadius: 100,
             height: '100%',
-            maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
             objectFit: 'contain',
             width: '100%',
           }}

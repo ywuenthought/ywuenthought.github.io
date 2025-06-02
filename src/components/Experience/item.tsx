@@ -2,7 +2,8 @@
 // This file is part of incredible-me and is licensed under the MIT License.
 // See the LICENSE file for more details.
 
-import { Box, type SxProps, type Theme, Typography } from '@mui/material';
+import type { SxProps, Theme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { formatDate } from '../../util';
 

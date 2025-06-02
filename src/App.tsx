@@ -13,6 +13,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
+import Travels from './components/Travels';
 import { ROUTES } from './const';
 
 function App() {
@@ -54,6 +55,15 @@ function App() {
               <Box>
                 <Toolbar />
                 <Publications />
+              </Box>
+            }
+          />
+          <Route
+            path={ROUTES.TRAVELS}
+            element={
+              <Box>
+                <Toolbar />
+                <Travels />
               </Box>
             }
           />
