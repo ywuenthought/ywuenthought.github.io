@@ -5,7 +5,7 @@
 import { AppBar, Button, Toolbar } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-import { ROUTES } from '../const';
+import { ROUTES } from '@/const';
 
 export default function Header() {
   return (
