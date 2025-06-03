@@ -6,7 +6,7 @@ import type { SxProps, Theme } from '@mui/material';
 import { Box } from '@mui/material';
 
 export type SceneProps = {
-  src?: string;
+  src: string;
   sx?: SxProps<Theme>;
 };
 
@@ -16,29 +16,25 @@ export default function Scene(props: SceneProps) {
   return (
     <Box
       sx={{
-        alignItems: 'center',
         aspectRatio: '3 / 2',
         display: 'flex',
-        flexShrink: 0,
+        flexDirection: 'column',
         justifyContent: 'center',
         ...sx,
       }}
     >
-      {src && (
-        <Box
-          component="img"
-          loading="lazy"
-          src={src}
-          sx={{
-            borderBottomLeftRadius: 100,
-            borderTopLeftRadius: 100,
-            height: '100%',
-            maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
-            objectFit: 'contain',
-            width: '100%',
-          }}
-        />
-      )}
+      <Box
+        component="img"
+        loading="lazy"
+        src={src}
+        sx={{
+          borderBottomLeftRadius: 20,
+          borderTopLeftRadius: 20,
+          maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
+          objectFit: 'contain',
+          width: '100%',
+        }}
+      />
     </Box>
   );
 }

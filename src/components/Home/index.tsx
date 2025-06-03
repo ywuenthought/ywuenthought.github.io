@@ -13,32 +13,22 @@ import Hero from './hero';
 export default function Home() {
   return (
     <Box
+      gap={2}
+      padding={4}
       sx={{
-        alignItems: 'center',
+        border: 1,
         display: 'flex',
-        flexDirection: 'column',
-        height: '100vh',
-        justifyContent: 'flex-start',
+        flexDirection: 'row',
+        height: 500,
       }}
     >
-      <Box
-        gap={2}
-        padding={4}
-        sx={{
-          border: 1,
-          display: 'flex',
-          flexDirection: 'row',
-          height: 400,
-        }}
-      >
-        <Hero src={hero} sx={{ height: '100%', width: '40%' }} />
-        <Desc
-          descriptions={DESCRIPTIONS}
-          greeting={GREETING}
-          title={TITLE}
-          sx={{ height: '100%' }}
-        />
-      </Box>
+      <Hero src={hero} sx={{ width: 300 }} />
+      <Desc
+        descriptions={DESCRIPTIONS}
+        greeting={GREETING}
+        title={TITLE}
+        sx={{ minWidth: 400 }}
+      />
     </Box>
   );
 }

@@ -16,8 +16,9 @@ export default function Scene(props: SceneProps) {
   return (
     <Box
       sx={{
-        alignItems: 'center',
+        aspectRatio: '1 / 1',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         ...sx,
       }}
@@ -28,7 +29,6 @@ export default function Scene(props: SceneProps) {
           loading="lazy"
           src={src}
           sx={{
-            height: '100%',
             objectFit: 'contain',
             width: '100%',
           }}

@@ -33,11 +33,7 @@ export default function Desc(props: DescProps) {
           {title}
         </Typography>
         {descriptions.map((desc, index) => (
-          <Typography
-            fontSize="small"
-            key={`home:descs:${index}`}
-            variant="body1"
-          >
+          <Typography key={`home:descs:${index}`} variant="body1">
             {desc}
           </Typography>
         ))}

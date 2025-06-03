@@ -2,6 +2,7 @@
 // This file is part of incredible-me and is licensed under the MIT License.
 // See the LICENSE file for more details.
 
+import type { SxProps, Theme } from '@mui/material';
 import { Card, CardContent, Link, Stack, Typography } from '@mui/material';
 
 export type ItemProps = {
@@ -13,13 +14,24 @@ export type ItemProps = {
   title: string;
   volume: number;
   year: number;
+  sx?: SxProps<Theme>;
 };
 
 export default function Item(props: ItemProps) {
-  const { doi, issue, journal, page, publisher, title, volume, year } = props;
+  const {
+    doi,
+    issue,
+    journal,
+    page,
+    publisher,
+    title,
+    volume,
+    year,
+    sx = {},
+  } = props;
 
   return (
-    <Card variant="outlined" sx={{ textAlign: 'left' }}>
+    <Card variant="outlined" sx={{ textAlign: 'left', ...sx }}>
       <CardContent>
         <Stack>
           <Typography fontWeight="bold" gutterBottom variant="subtitle1">

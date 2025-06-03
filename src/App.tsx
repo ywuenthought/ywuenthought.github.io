@@ -28,6 +28,7 @@ function App() {
               <Box>
                 <Toolbar />
                 <Home />
+                <Footer />
               </Box>
             }
           />
@@ -69,7 +70,6 @@ function App() {
           />
         </Routes>
       </Box>
-      <Footer />
     </>
   );
 }

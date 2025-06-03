@@ -7,7 +7,7 @@ export const DESCRIPTIONS = [
     'experience, I specialize in designing robust, scalable systems. I value ' +
     "clean architecture and prioritize code that's readable, extensible, and " +
     ' maintainable. I take a planning-first approach to software development-' +
-    'emphasizing strategic thinking before implementation. I value effective ' +
+    'emphasizing strategic thinking before implementation. I merit effective ' +
     'and timely team communication and collaboration.',
   "When I'm not coding, I enjoy watching anime-especially Demon Slayer and " +
     'films by Makoto Shinkai, visiting Disney and Universal theme parks from ' +

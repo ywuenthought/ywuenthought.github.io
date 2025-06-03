@@ -11,7 +11,11 @@ export default function Publications() {
   return (
     <Stack spacing={2}>
       {ITEMS.map((item, index) => (
-        <Item key={`publications:items:${index}`} {...item} />
+        <Item
+          {...item}
+          key={`publications:items:${index}`}
+          sx={{ minWidth: 400 }}
+        />
       ))}
     </Stack>
   );

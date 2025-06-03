@@ -14,7 +14,9 @@ export default function Travels() {
 
   return (
     <Box>
-      <Typography variant="body1">{dateTimes[index]}</Typography>
+      <Typography variant="body1" sx={{ mb: 1 }}>
+        {dateTimes[index]}
+      </Typography>
       <Slider cardWidth={700} indexState={{ index, setIndex }}>
         {scenes.map((scene, index) => (
           <Scene
@@ -24,7 +26,9 @@ export default function Travels() {
           />
         ))}
       </Slider>
-      <Typography variant="body1">tmp</Typography>
+      <Typography variant="body1" sx={{ mt: 1 }}>
+        tmp
+      </Typography>
     </Box>
   );
 }

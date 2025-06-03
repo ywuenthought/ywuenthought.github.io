@@ -17,18 +17,18 @@ export default function Experience() {
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: 8,
+            gap: 4,
             height: 400,
           }}
         >
           <Scene {...scenes[index]} sx={{ height: '100%' }} />
-          <Stack
-            direction="column"
-            spacing={2}
-            sx={{ height: '100%', textAlign: 'left' }}
-          >
+          <Stack direction="column" spacing={2} sx={{ textAlign: 'left' }}>
             {items.map((item, innerIndex) => (
-              <Item {...item} key={`experience:items:${index}:${innerIndex}`} />
+              <Item
+                {...item}
+                key={`experience:items:${index}:${innerIndex}`}
+                sx={{ minWidth: 300 }}
+              />
             ))}
           </Stack>
         </Box>

@@ -3,7 +3,7 @@
 // See the LICENSE file for more details.
 
 import type { SxProps, Theme } from '@mui/material';
-import { Box, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 
 import { formatDate } from '../../util';
 
@@ -20,7 +20,7 @@ export default function Item(props: ItemProps) {
   const { endDate, field, organization, startDate, title, sx = {} } = props;
 
   return (
-    <Box sx={{ ...sx }}>
+    <Stack sx={{ ...sx }}>
       <Typography fontWeight="bold" variant="subtitle1">
         {title}
       </Typography>
@@ -29,6 +29,6 @@ export default function Item(props: ItemProps) {
         {formatDate(startDate)} - {endDate ? formatDate(endDate) : 'Now'}
       </Typography>
       {field && <Typography variant="body2">{field}</Typography>}
-    </Box>
+    </Stack>
   );
 }
