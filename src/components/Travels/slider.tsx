@@ -33,7 +33,7 @@ export default function Slider(props: SliderProps) {
     setIsScrolling(true);
     scrollRef.current.scrollBy({ behavior: 'smooth', left: scrollAmount });
     if (scrollLockRef.current) window.clearTimeout(scrollLockRef.current);
-    scrollLockRef.current = window.setTimeout(() => setIsScrolling(false), 500);
+    scrollLockRef.current = window.setTimeout(() => setIsScrolling(false), 400);
 
     if (indexState) {
       const { index, setIndex } = indexState;
