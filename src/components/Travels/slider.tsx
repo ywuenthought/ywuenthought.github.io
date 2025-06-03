@@ -11,15 +11,31 @@ type SliderProps = {
   children: ReactNode;
   cardWidth: number;
   sx?: SxProps<Theme>;
+  indexState?: {
+    index: number;
+    setIndex: (index: number) => void;
+  };
 };
 
 export default function Slider(props: SliderProps) {
-  const { children, cardWidth, sx = {} } = props;
+  const { children, cardWidth, sx = {}, indexState } = props;
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const scroll = (direction: 'left' | 'right') => {
+    if (!scrollRef.current) return;
+
     const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
-    scrollRef.current?.scrollBy({ behavior: 'smooth', left: scrollAmount });
+    scrollRef.current.scrollBy({ behavior: 'smooth', left: scrollAmount });
+
+    if (indexState) {
+      const { index, setIndex } = indexState;
+
+      const count = React.Children.count(children ?? []);
+      const rawIndex = index + (direction === 'left' ? -1 : 1);
+      const newIndex = Math.max(0, Math.min(rawIndex, count - 1));
+
+      if (newIndex !== index) setIndex(newIndex);
+    }
   };
 
   return (
@@ -27,7 +43,7 @@ export default function Slider(props: SliderProps) {
       <IconButton
         onClick={() => scroll('left')}
         sx={{
-          left: '-10%',
+          left: '-7%',
           position: 'absolute',
           top: '50%',
           transform: 'translateY(-50%)',
@@ -40,7 +56,7 @@ export default function Slider(props: SliderProps) {
         onClick={() => scroll('right')}
         sx={{
           position: 'absolute',
-          right: '-10%',
+          right: '-7%',
           top: '50%',
           transform: 'translateY(-50%)',
           zIndex: 1,

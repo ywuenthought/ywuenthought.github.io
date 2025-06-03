@@ -3,21 +3,28 @@
 // See the LICENSE file for more details.
 
 import { Box, Typography } from '@mui/material';
+import { useState } from 'react';
 
 import { dateTimes, scenes } from './const';
 import Scene from './scene';
 import Slider from './slider';
 
 export default function Travels() {
+  const [index, setIndex] = useState(0);
+
   return (
-    <Slider cardWidth={700}>
-      {scenes.map((scene, index) => (
-        <Box key={`travels:items:${index}`} sx={{ width: 700 }}>
-          <Typography variant="body1">{dateTimes[index]}</Typography>
-          <Scene {...scene} />
-          <Typography variant="body1">tmp</Typography>
-        </Box>
-      ))}
-    </Slider>
+    <Box>
+      <Typography variant="body1">{dateTimes[index]}</Typography>
+      <Slider cardWidth={700} indexState={{ index, setIndex }}>
+        {scenes.map((scene, index) => (
+          <Scene
+            {...scene}
+            key={`travels:scenes:${index}`}
+            sx={{ width: 700 }}
+          />
+        ))}
+      </Slider>
+      <Typography variant="body1">tmp</Typography>
+    </Box>
   );
 }
