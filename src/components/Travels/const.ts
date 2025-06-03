@@ -45,6 +45,5 @@ export const dateTimes = scenes.map(({ src }) => {
   const y = parseInt(`20${stem.slice(0, 2)}`, 10);
   const m = parseInt(stem.slice(2, 4), 10) - 1;
   const d = parseInt(stem.slice(4, 6), 10);
-  console.log(y, m, d);
   return formatDate(new Date(y, m, d));
 });

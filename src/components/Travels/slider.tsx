@@ -3,9 +3,10 @@
 // See the LICENSE file for more details.
 
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
-import { Box, IconButton, type SxProps, type Theme } from '@mui/material';
+import type { SxProps, Theme } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import type { ReactNode } from 'react';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 type SliderProps = {
   children: ReactNode;
@@ -21,11 +22,18 @@ export default function Slider(props: SliderProps) {
   const { children, cardWidth, sx = {}, indexState } = props;
 
   const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollLockRef = useRef<number>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+
   const scroll = (direction: 'left' | 'right') => {
     if (!scrollRef.current) return;
 
     const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+
+    setIsScrolling(true);
     scrollRef.current.scrollBy({ behavior: 'smooth', left: scrollAmount });
+    if (scrollLockRef.current) window.clearTimeout(scrollLockRef.current);
+    scrollLockRef.current = window.setTimeout(() => setIsScrolling(false), 500);
 
     if (indexState) {
       const { index, setIndex } = indexState;
@@ -41,6 +49,7 @@ export default function Slider(props: SliderProps) {
   return (
     <Box sx={{ position: 'relative', ...sx }}>
       <IconButton
+        disabled={isScrolling}
         onClick={() => scroll('left')}
         sx={{
           left: '-7%',
@@ -53,6 +62,7 @@ export default function Slider(props: SliderProps) {
         <ArrowLeft />
       </IconButton>
       <IconButton
+        disabled={isScrolling}
         onClick={() => scroll('right')}
         sx={{
           position: 'absolute',
