@@ -15,7 +15,7 @@ export const itemLists: ItemProps[][] = [
       field:
         'Develop AI-powered desktop and web applications to automate ' +
         'scientific data acquisition, analysis, and storage workflows.',
-      organization: 'Enthought',
+      organization: 'Enthought, Inc.',
       startDate: new Date(2022, 11),
       title: 'Software Developer',
     },
@@ -27,7 +27,7 @@ export const itemLists: ItemProps[][] = [
         'Perform computational modeling and simulation of point defects in ' +
         'chemical compounds; Develop a CLI backed by a structured database ' +
         'to collect, analyze, and store thermodynamic data.',
-      organization: 'NCSU',
+      organization: 'North Carolina State University',
       startDate: new Date(2021, 8),
       title: 'Postdoctoral Scholar',
     },
@@ -36,7 +36,7 @@ export const itemLists: ItemProps[][] = [
       field:
         'Build and apply multiphysics computational techniques to explore ' +
         'materials properties; Manage and process large-scale research data.',
-      organization: 'NCSU',
+      organization: 'North Carolina State University',
       startDate: new Date(2015, 8),
       title: 'Doctor of Philosophy',
     },
@@ -47,7 +47,7 @@ export const itemLists: ItemProps[][] = [
       field:
         'Conduct computational research on materials defects; Script for ' +
         'automatic thermodynamic simulation using ab initio data.',
-      organization: 'NJST',
+      organization: 'Nanjing University of Science and Technology',
       startDate: new Date(2014, 6),
       title: 'Bachelor of Science',
     },

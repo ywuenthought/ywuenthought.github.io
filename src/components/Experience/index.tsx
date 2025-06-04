@@ -18,7 +18,7 @@ export default function Experience() {
             display: 'flex',
             flexDirection: 'row',
             gap: 4,
-            height: 400,
+            height: 350,
           }}
         >
           <Scene {...scenes[index]} sx={{ height: '100%' }} />
