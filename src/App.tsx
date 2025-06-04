@@ -10,16 +10,23 @@ import { Route, Routes } from 'react-router-dom';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import type { ThemeControllerProps } from './components/Header/theme';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
 import Travels from './components/Travels';
 import { ROUTES } from './const';
 
-function App() {
+type AppProps = {
+  theme: ThemeControllerProps;
+};
+
+function App(props: AppProps) {
+  const { theme } = props;
+
   return (
     <>
-      <Header />
+      <Header theme={theme} />
       <Box component="main">
         <Routes>
           <Route
