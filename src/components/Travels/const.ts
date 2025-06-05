@@ -6,26 +6,26 @@ import { formatDate } from '@/util';
 
 import type { SceneProps } from './scene';
 
-export const logs = [
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
+export const locations = [
+  'Universal Studios Japan',
+  'Nara Park',
+  'Downtown Osaka',
+  'Walt Disney World Resort in Orlando',
+  "NASA's Johnson Space Center",
+  "NASA's Johnson Space Center",
+  'The Museum of the Mausoleum of the First Qin Emperor',
+  'Dujiangyan Panda Valley',
+  'Dujiangyan Panda Valley',
+  'Qingcheng Mountain',
+  'Qingcheng Mountain',
+  'Sanxingdui Museum',
+  'Sanxingdui Museum',
+  'San Diego Zoo',
+  'San Diego Zoo',
+  'United States Capitol',
+  'United States Capitol',
+  'Universal Epic Universe',
+  'Universal Epic Universe',
 ];
 
 const travelPhotos = import.meta.glob('@/assets/travels/*.jpg', {

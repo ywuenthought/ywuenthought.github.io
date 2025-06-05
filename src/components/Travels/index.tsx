@@ -5,7 +5,7 @@
 import { Box, Typography } from '@mui/material';
 import { useState } from 'react';
 
-import { dateTimes, scenes } from './const';
+import { dateTimes, locations, scenes } from './const';
 import Scene from './scene';
 import Slider from './slider';
 
@@ -27,7 +27,7 @@ export default function Travels() {
         ))}
       </Slider>
       <Typography variant="body1" sx={{ mt: 1 }}>
-        tmp
+        {locations[index]}
       </Typography>
     </Box>
   );
