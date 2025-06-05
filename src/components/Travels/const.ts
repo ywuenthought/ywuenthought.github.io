@@ -30,15 +30,13 @@ export const locations = [
 
 const travelPhotos = import.meta.glob('@/assets/travels/*.jpg', {
   eager: true,
-});
+}) as { [key: string]: { default: string } };
 
-export const scenes: (SceneProps & { src: string })[] = Object.keys(
+export const scenes: (SceneProps & { src: string })[] = Object.values(
   travelPhotos
-).map((src) => ({
-  src,
-}));
+).map(({ default: src }) => ({ src }));
 
-export const dateTimes = scenes.map(({ src }) => {
+export const dateTimes = Object.keys(travelPhotos).map((src) => {
   const fileName = src.split('/').pop() || '';
   const dotIndex = fileName.lastIndexOf('.');
   const stem = dotIndex === -1 ? fileName : fileName.slice(0, dotIndex);
