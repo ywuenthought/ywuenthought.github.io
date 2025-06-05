@@ -16,10 +16,11 @@ export default function Scene(props: SceneProps) {
   return (
     <Box
       sx={{
-        aspectRatio: '3 / 2',
+        aspectRatio: '4 / 1',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        overflow: 'hidden',
         ...sx,
       }}
     >
@@ -28,10 +29,9 @@ export default function Scene(props: SceneProps) {
         loading="lazy"
         src={src}
         sx={{
-          borderBottomLeftRadius: 20,
-          borderTopLeftRadius: 20,
-          maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
-          objectFit: 'contain',
+          borderRadius: 2,
+          height: '100%',
+          objectFit: 'cover',
           width: '100%',
         }}
       />

@@ -2,7 +2,7 @@
 // This file is part of incredible-me and is licensed under the MIT License.
 // See the LICENSE file for more details.
 
-import { Box, Stack } from '@mui/material';
+import { Stack } from '@mui/material';
 
 import { itemLists, scenes } from './const';
 import Item from './item';
@@ -12,26 +12,21 @@ export default function Experience() {
   return (
     <Stack direction="column" spacing={4}>
       {itemLists.map((items, index) => (
-        <Box
+        <Stack
+          direction="column"
           key={`experience:items:${index}`}
-          sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            gap: 4,
-            height: 350,
-          }}
+          spacing={2}
+          sx={{ textAlign: 'left' }}
         >
-          <Scene {...scenes[index]} sx={{ height: '100%' }} />
-          <Stack direction="column" spacing={2} sx={{ textAlign: 'left' }}>
-            {items.map((item, innerIndex) => (
-              <Item
-                {...item}
-                key={`experience:items:${index}:${innerIndex}`}
-                sx={{ minWidth: 300 }}
-              />
-            ))}
-          </Stack>
-        </Box>
+          <Scene {...scenes[index]} />
+          {items.map((item, innerIndex) => (
+            <Item
+              {...item}
+              key={`experience:items:${index}:${innerIndex}`}
+              sx={{ minWidth: 300 }}
+            />
+          ))}
+        </Stack>
       ))}
     </Stack>
   );
