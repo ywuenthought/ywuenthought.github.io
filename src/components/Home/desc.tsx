@@ -26,14 +26,17 @@ export default function Desc(props: DescProps) {
       }}
     >
       <Stack direction="column" spacing={2}>
-        <Typography gutterBottom variant="h3">
+        <Typography gutterBottom sx={{ fontSize: 'clamp(1.5rem, 5vw, 3rem)' }}>
           {greeting}
         </Typography>
-        <Typography gutterBottom variant="h5">
+        <Typography gutterBottom sx={{ fontSize: 'clamp(1rem, 4vw, 1.5rem)' }}>
           {title}
         </Typography>
         {descriptions.map((desc, index) => (
-          <Typography key={`home:descs:${index}`} variant="body1">
+          <Typography
+            key={`home:descs:${index}`}
+            sx={{ fontSize: 'clamp(0.875rem, 2.5vw, 1rem)' }}
+          >
             {desc}
           </Typography>
         ))}

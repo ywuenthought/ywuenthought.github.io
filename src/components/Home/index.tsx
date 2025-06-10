@@ -19,16 +19,11 @@ export default function Home() {
         border: 1,
         display: 'flex',
         flexDirection: 'row',
-        height: 500,
+        height: '50vh',
       }}
     >
-      <Hero src={hero} sx={{ width: 300 }} />
-      <Desc
-        descriptions={DESCRIPTIONS}
-        greeting={GREETING}
-        title={TITLE}
-        sx={{ minWidth: 400 }}
-      />
+      <Hero src={hero} sx={{ width: '30%' }} />
+      <Desc descriptions={DESCRIPTIONS} greeting={GREETING} title={TITLE} />
     </Box>
   );
 }

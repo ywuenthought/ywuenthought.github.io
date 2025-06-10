@@ -52,7 +52,7 @@ export default function Slider(props: SliderProps) {
         disabled={isScrolling}
         onClick={() => scroll('left')}
         sx={{
-          left: '-7%',
+          left: -50,
           position: 'absolute',
           top: '50%',
           transform: 'translateY(-50%)',
@@ -66,7 +66,7 @@ export default function Slider(props: SliderProps) {
         onClick={() => scroll('right')}
         sx={{
           position: 'absolute',
-          right: '-7%',
+          right: -50,
           top: '50%',
           transform: 'translateY(-50%)',
           zIndex: 1,

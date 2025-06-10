@@ -34,11 +34,7 @@ export default function Publications() {
         onChange={(e) => setQuery(e.target.value)}
       />
       {sortedItems.map((item, index) => (
-        <Item
-          {...item}
-          key={`publications:items:${index}`}
-          sx={{ minWidth: 400 }}
-        />
+        <Item {...item} key={`publications:items:${index}`} />
       ))}
     </Stack>
   );

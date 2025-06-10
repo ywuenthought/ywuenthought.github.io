@@ -11,11 +11,7 @@ export default function Projects() {
   return (
     <Stack spacing={4} sx={{ textAlign: 'left' }}>
       {ITEMS.map((item, index) => (
-        <Item
-          {...item}
-          key={`projects:items:${index}`}
-          sx={{ minWidth: 400 }}
-        />
+        <Item {...item} key={`projects:items:${index}`} />
       ))}
     </Stack>
   );

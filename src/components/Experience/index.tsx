@@ -20,11 +20,7 @@ export default function Experience() {
         >
           <Scene {...scenes[index]} />
           {items.map((item, innerIndex) => (
-            <Item
-              {...item}
-              key={`experience:items:${index}:${innerIndex}`}
-              sx={{ minWidth: 300 }}
-            />
+            <Item {...item} key={`experience:items:${index}:${innerIndex}`} />
           ))}
         </Stack>
       ))}
