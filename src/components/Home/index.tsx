@@ -18,11 +18,10 @@ export default function Home() {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
-        height: '50vh',
         justifyContent: 'center',
       }}
     >
-      <Hero src={hero} sx={{ width: 300 }} />
+      <Hero src={hero} sx={{ width: 250 }} />
       <Desc descriptions={DESCRIPTIONS} greeting={GREETING} title={TITLE} />
     </Box>
   );
