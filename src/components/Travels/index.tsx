@@ -9,7 +9,7 @@ import { dateTimes, locations, scenes } from './const';
 import Scene from './scene';
 import Slider from './slider';
 
-const UNIT_VALUE = 50;
+const UNIT_VALUE = 40;
 
 export default function Travels() {
   const [index, setIndex] = useState(0);
