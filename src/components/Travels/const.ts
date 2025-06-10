@@ -24,6 +24,12 @@ export const locations = [
   'San Diego Zoo',
   'United States Capitol',
   'United States Capitol',
+  'Yandang Mountain',
+  'Yandang Mountain',
+  'Shenxianju Scenic Area',
+  'Shenxianju Scenic Area',
+  'Gate to the East',
+  'Jinji Lake',
   'Universal Epic Universe',
   'Universal Epic Universe',
 ];
