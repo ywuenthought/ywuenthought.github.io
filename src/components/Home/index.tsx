@@ -13,16 +13,16 @@ import Hero from './hero';
 export default function Home() {
   return (
     <Box
-      gap={2}
-      padding={4}
+      gap={4}
       sx={{
-        border: 1,
+        alignItems: 'center',
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
         height: '50vh',
+        justifyContent: 'center',
       }}
     >
-      <Hero src={hero} sx={{ width: '30%' }} />
+      <Hero src={hero} sx={{ width: 300 }} />
       <Desc descriptions={DESCRIPTIONS} greeting={GREETING} title={TITLE} />
     </Box>
   );
