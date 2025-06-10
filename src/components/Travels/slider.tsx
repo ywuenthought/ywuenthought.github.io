@@ -26,9 +26,6 @@ export default function Slider(props: SliderProps) {
   const scroll = (direction: 'left' | 'right') => {
     if (!scrollRef.current) return;
 
-    const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
-    scrollRef.current.scrollBy({ behavior: 'instant', left: scrollAmount });
-
     if (indexState) {
       const { index, setIndex } = indexState;
 
@@ -36,8 +33,11 @@ export default function Slider(props: SliderProps) {
       const rawIndex = index + (direction === 'left' ? -1 : 1);
       const newIndex = Math.max(0, Math.min(rawIndex, count - 1));
 
-      if (newIndex !== index) setIndex(newIndex);
+      setIndex(newIndex);
     }
+
+    const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+    scrollRef.current.scrollBy({ behavior: 'instant', left: scrollAmount });
   };
 
   return (
