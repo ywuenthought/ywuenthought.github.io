@@ -40,10 +40,6 @@ const travelPhotos = import.meta.glob('@/assets/travels/*.jpg', {
   eager: true,
 }) as { [key: string]: { default: string } };
 
-export const scenes: (SceneProps & { src: string })[] = Object.values(
-  travelPhotos
-).map(({ default: src }) => ({ src }));
-
 export const dateTimes = Object.keys(travelPhotos).map((src) => {
   const fileName = src.split('/').pop() || '';
   const dotIndex = fileName.lastIndexOf('.');
@@ -53,3 +49,10 @@ export const dateTimes = Object.keys(travelPhotos).map((src) => {
   const d = parseInt(stem.slice(4, 6), 10);
   return formatDate(new Date(y, m, d));
 });
+
+export const scenes: (SceneProps & { src: string })[] = Object.values(
+  travelPhotos
+).map(({ default: src }, index) => ({
+  src,
+  title: `${dateTimes[index]} - ${locations[index]}`,
+}));
