@@ -14,6 +14,7 @@ import type { ThemeControllerProps } from './components/Header/theme';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
+import ScrollToTopButton from './components/ToTop';
 import Travels from './components/Travels';
 import { ROUTES } from './const';
 
@@ -77,6 +78,7 @@ function App(props: AppProps) {
           />
         </Routes>
       </Box>
+      <ScrollToTopButton />
     </>
   );
 }
