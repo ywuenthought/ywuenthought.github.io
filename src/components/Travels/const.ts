@@ -32,6 +32,8 @@ export const locations = [
   'Jinji Lake',
   'Universal Epic Universe',
   'Universal Epic Universe',
+  'Universal Epic Universe',
+  'Universal Epic Universe',
 ];
 
 const travelPhotos = import.meta.glob('@/assets/travels/*.jpg', {
