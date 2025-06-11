@@ -4,6 +4,24 @@
 
 import { createTheme } from '@mui/material/styles';
 
-export const lightTheme = createTheme({ palette: { mode: 'light' } });
+export const lightTheme = createTheme({
+  palette: { mode: 'light' },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: { backgroundColor: '#ffffff' },
+      },
+    },
+  },
+});
 
-export const darkTheme = createTheme({ palette: { mode: 'dark' } });
+export const darkTheme = createTheme({
+  palette: { mode: 'dark' },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: { backgroundColor: '#121212' },
+      },
+    },
+  },
+});
