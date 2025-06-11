@@ -22,12 +22,7 @@ export default function ScrollToTopButton() {
     <Zoom in={visible}>
       <Fab
         size="small"
-        sx={{
-          bottom: 6,
-          left: '50%',
-          position: 'fixed',
-          transform: 'translateX(-50%)',
-        }}
+        sx={{ bottom: 8, position: 'fixed', right: 8 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <ArrowUpward />
