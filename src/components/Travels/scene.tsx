@@ -55,6 +55,7 @@ export default function Scene(props: SceneProps) {
             >
               <DialogTitle
                 sx={{
+                  fontSize: 'clamp(1rem, 4vw, 1.5rem)',
                   left: '50%',
                   position: 'absolute',
                   textAlign: 'center',
@@ -74,7 +75,7 @@ export default function Scene(props: SceneProps) {
               src={src}
               sx={{
                 height: '100%',
-                objectFit: 'cotain',
+                objectFit: 'contain',
                 width: '100%',
               }}
             />
