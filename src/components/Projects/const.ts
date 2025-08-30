@@ -7,6 +7,37 @@ import type { ItemProps } from './item';
 export const ITEMS: ItemProps[] = [
   {
     descriptions: [
+      'Hiresify is a full-stack web application that provides AI-powered ' +
+        'image and video upscaling. Users can securely upload media, manage ' +
+        'their content, and retrieve enhanced outputs with minimal setup. ' +
+        'The platform emphasizes speed, quality, and ease of use for both ' +
+        'individual and professional users.',
+      'The backend is built with FastAPI, offering authentication, ' +
+        'file upload handling, caching, and database integration. The ' +
+        'frontend uses React, TypeScript, and Vite, providing a responsive, ' +
+        'modern UI for seamless interactions. The architecture is designed ' +
+        'to be scalable and developer-friendly.',
+    ],
+    organization: 'Independent',
+    startDate: new Date(2025, 6),
+    techStack: [
+      'Docker',
+      'FastAPI',
+      'GitHub Actions',
+      'JWT Authentication',
+      'MinIO',
+      'PostgreSQL',
+      'Python',
+      'React',
+      'SQLite',
+      'Typescript',
+      'Uvicorn',
+      'Vite',
+    ],
+    title: 'Hiresify: AI Image & Video Upscaler',
+  },
+  {
+    descriptions: [
       "I'm currently developing a web application that enables scientists to " +
         'summarize and analyze biophysical assay data through an intuitive, ' +
         'interactive interface. This app performs real-time computations in ' +
