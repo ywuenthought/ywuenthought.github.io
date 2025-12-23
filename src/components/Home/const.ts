@@ -4,8 +4,8 @@
 
 export const DESCRIPTIONS = [
   'As a software developer with a strong backend focus with solid frontend ' +
-    'experience, I specialize in designing robust, scalable systems. I value ' +
-    "clean architecture and prioritize code that's readable, extensible, and " +
+    'experience, I specialize in designing robust, scalable, AI-powered systems. ' +
+    "I value clean architecture and prioritize code that's readable, extensible, and " +
     ' maintainable. I take a planning-first approach to software development-' +
     'emphasizing strategic thinking before implementation. I merit effective ' +
     'and timely team communication and collaboration.',
