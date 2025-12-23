@@ -17,4 +17,6 @@ export const DESCRIPTIONS = [
 
 export const GREETING = "Hi, I'm Yifeng Wu.";
 
-export const TITLE = 'Software Developer';
+export const TITLE =
+  "I'm a Ph.D. in Materials Science & Engineering at North Carolina State University " +
+  "focusing on First Principles Simulation. I'm also a Software Developer (Full Stack).";

@@ -7,12 +7,10 @@ import './App.css';
 import { Box, Toolbar } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
-import Experience from './components/Experience';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import type { ThemeControllerProps } from './components/Header/theme';
 import Home from './components/Home';
-import Projects from './components/Projects';
 import Publications from './components/Publications';
 import ScrollToTopButton from './components/ToTop';
 import Travels from './components/Travels';
@@ -37,24 +35,6 @@ function App(props: AppProps) {
                 <Toolbar />
                 <Home />
                 <Footer />
-              </Box>
-            }
-          />
-          <Route
-            path={ROUTES.EXPERIENCE}
-            element={
-              <Box>
-                <Toolbar />
-                <Experience />
-              </Box>
-            }
-          />
-          <Route
-            path={ROUTES.PROJECTS}
-            element={
-              <Box>
-                <Toolbar />
-                <Projects />
               </Box>
             }
           />
