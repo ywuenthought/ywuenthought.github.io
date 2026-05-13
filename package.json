@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ywu.github.io",
+  "homepage": "https://ywucode.github.io",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
