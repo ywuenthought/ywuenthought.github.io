@@ -4,6 +4,6 @@
 
 export const EMAIL = 'yifengwucms@gmail.com';
 
-export const GITHUB_ID = 'ywuenthought';
+export const GITHUB_ID = 'ywucode';
 
-export const LINKEDIN_ID = 'yifengwucms';
+export const LINKEDIN_ID = 'ywulink';
